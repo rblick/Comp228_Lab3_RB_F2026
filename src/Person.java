@@ -1,29 +1,22 @@
 /**
- * Lab3_Robert Blick_F2026
+ * Midterm_RobertBlick_Fall2026
  */
 
-public class Person 
+public abstract class Person 
 {
-	public int personID;
-	public String name;
-	public int age;
+	final int personId;
+	String name;
+	String phoneNumber;
+	static int personCount;
 	
-	public Person(int personID, String name, int age)
+	public Person(int personId, String name, String phoneNumber, int personCount) 
 	{
-		this.personID = personID;
+		this.personId = personId;
 		this.name = name;
-		this.age = age;
+		this.phoneNumber = phoneNumber;
+		this.personCount = personCount;
 	}
 	
-	@Override
-	public String toString()
-	{
-	    return "#" + personID + ", " + name + ", " + age;
-	}
-	
-	public void performDuties()
-	{
-		System.out.println(name + " is performing hospital duties.");
-	}
-}	
+	abstract String getRoleDescription();
+}
 
